@@ -14,6 +14,8 @@ var makeQueue = function(){
 
   queue.dequeue = function(){
     size--;
+    delete queue[0];
+    return queue[0];
   };
 
   queue.size = function(){

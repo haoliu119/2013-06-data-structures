@@ -54,11 +54,15 @@ describe("queue", function() {
   it('dequeuing should return the value referenced by key 0',function(){
     queue.enqueue('zero');
     queue.enqueue('first');
-    queue.dequeue();
-    expect(queue[0]).to.equal('first');
+    expect(queue.dequeue()).to.equal(queue[0]);
   });
-  // dequeuing should remove the value referenced by key 0
 
+  // dequeuing should remove the value referenced by key 0
+  it('should remove the first value', function(){
+    queue.enqueue('zero');
+    queue.dequeue();
+    expect(_(queue).contains('zero')).to.equal(false);
+  });
 
   // Hey! Add tests here that thoroughly test the functionality of your queue
 });
