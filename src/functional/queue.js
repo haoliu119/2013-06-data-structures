@@ -2,7 +2,7 @@ var makeQueue = function(){
   // Use an object with numeric keys to store values
   var storage = {};
 
-  var size = 0; // Hint: set an initial value here
+  var size = 0;
 
   // Implement the methods below
   var queue = {};
@@ -24,3 +24,5 @@ var makeQueue = function(){
 
   return queue;
 };
+
+

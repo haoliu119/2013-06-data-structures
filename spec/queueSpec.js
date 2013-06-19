@@ -54,6 +54,7 @@ describe("queue", function() {
   it('dequeuing should return the value referenced by key 0',function(){
     queue.enqueue('zero');
     queue.enqueue('first');
+    debugger;
     expect(queue.dequeue()).to.equal(queue[0]);
   });
 
@@ -64,5 +65,7 @@ describe("queue", function() {
     expect(_(queue).contains('zero')).to.equal(false);
   });
 
-  // Hey! Add tests here that thoroughly test the functionality of your queue
+  // after dequeuing, all keys decrease by one
+
+
 });
