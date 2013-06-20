@@ -15,9 +15,10 @@ var makeQueue = function(){
   queue.dequeue = function(){
     size && size--;
     var firstVar = storage[0];
-    _.each(Object.keys(storage), function(item){
-      storage[item] = storage[item + 1];
-    });
+    var keysArr = Object.keys(storage);
+    for(var i = 1; i < keysArr.length; i++){
+      storage[i - 1] = storage[i];
+    }
     delete storage[size];
     return firstVar;
   };

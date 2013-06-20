@@ -30,7 +30,9 @@ describe("stack", function() {
   });
 
   it('should remove popped items from the top of the stack', function() {
-
+      stack.push('bob');// push bob
+      stack.push('zak');// push zak
+      expect(stack.pop()).to.equal('zak');
   });
 
   it('should push and pop multiple items in the right order (LIFO)', function() {
