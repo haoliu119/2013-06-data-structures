@@ -1,9 +1,7 @@
 var Stack = function() {
   var stack = Object.create(Stack.stackMethods);
-
   stack._storage = {};
-
-  stack._size = 0; // Hint: set an initial value here
+  stack._size = 0;
   return stack;
 };
 
