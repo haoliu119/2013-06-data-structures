@@ -8,14 +8,18 @@ var makeQueue = function(){
   var queue = {};
 
   queue.enqueue = function(value){
-    queue[size] = value;
+    storage[size] = value;
     size++;
   };
 
   queue.dequeue = function(){
-    size--;
-    delete queue[0];
-    return queue[0];
+    size && size--;
+    var firstVar = storage[0];
+    _.each(Object.keys(storage), function(item){
+      storage[item] = storage[item + 1];
+    });
+    delete storage[size];
+    return firstVar;
   };
 
   queue.size = function(){
