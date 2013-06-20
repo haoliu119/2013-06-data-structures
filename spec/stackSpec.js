@@ -1,5 +1,6 @@
 describe("stack", function() {
   var stack;
+  var nameList = ['Hao', 'Zak', 'Alex', 'Bob'];
 
   /* BEGIN DO NOT MODIFY */
   beforeEach(function() {
@@ -22,19 +23,29 @@ describe("stack", function() {
   });
 
   it('should add pushed items to the top of the stack', function() {
-    // Fill out the body of the test here
+    _.each(nameList, function(name){
+      stack.push(name);
+    });
+    expect(stack.pop()).to.equal(_(nameList).last());
   });
 
   it('should remove popped items from the top of the stack', function() {
-    // Fill out the body of the test here
+
   });
 
   it('should push and pop multiple items in the right order (LIFO)', function() {
-    // Fill out the body of the test here
+      stack.push('bob');// push bob
+      stack.push('zak');// push zak
+      expect(stack.pop()).to.equal('zak');// pop --> zak
+      stack.push('hao');// push hao
+      expect(stack.pop()).to.equal('hao');// pop --> hao
+      expect(stack.pop()).to.equal('bob');// pop --> bob
+      expect(stack.size()).to.equal(0);// size --> 0
   });
 
   it('should not error when popping from an empty stack', function() {
-    // Fill out the body of the test here
+    expect(stack.pop()).to.equal(undefined);
+    expect(stack.size()).to.equal(0);
   });
 
   // Hey! Add more tests here if you can think of ways to test your stack more thoroughly
